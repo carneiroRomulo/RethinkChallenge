@@ -1,0 +1,28 @@
+.gridContainer {
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header'
+        'form table table table table table'
+        'footer footer footer footer footer footer';
+    gap: 1rem;
+    border: 1px solid black;
+}
+.item1 {
+    grid-area: header;
+    border: 2px solid red;
+}
+.item2 {
+    grid-area: form;
+    border: 2px solid blue;
+}
+.item3 {
+    grid-area: table;
+    border: 2px solid green;
+}
+.item4 {
+    grid-area: footer;
+    border: 2px solid yellow;
+}
