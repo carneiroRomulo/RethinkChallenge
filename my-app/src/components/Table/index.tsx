@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './index.module.css';
 
 const pessoas = [
@@ -20,15 +20,51 @@ const Table = () => {
         'Telefone',
         'Data de Preenchimento'
     ]
+    const [data, setData] = useState(pessoas);
+    const [inputedData, setInputedData] = useState('');
+    const [search, setSearch] = useState(false);
+
+    const handleInputedData = (event: any) => {
+        setInputedData(event.target.value);
+        if (event.target.value === '') {
+            setSearch(false);
+        }
+    }
+
+    const handleSearch = () => {
+        const filteredData = pessoas.filter((pessoa) => {
+            return pessoa.name === inputedData;
+        })
+        if (filteredData.length > 0) {
+            setData(filteredData);
+        } else {
+            alert('Nenhuma pessoa com esse nome foi cadastrada')
+            setData(pessoas);
+        }
+    };
+            
     return (
         <table className={styles.container}>
-            <thead> Individuos Cadastrados </thead>
+            <thead>
+                Individuos Cadastrados
+                <div className={styles.searchContainer}>
+                    <input
+                        type="text"
+                        className={styles.searchInput}
+                        placeholder='Nome Completo'
+                        onBlur={(event) => handleInputedData(event)}
+                    />
+                    <button className={styles.searchButton} onClick={() => handleSearch()}>
+                        <i className="fas fa-search"></i>
+                    </button>
+                </div>
+            </thead>
             <tr>
                 {columns.map((column) => (
                     <th key={`head-${column}`}> {column} </th>
                 ))}
             </tr>
-            {pessoas.map((row) => (
+            {data.map((row) => (
                 <tr>
                     <td> {row.name} </td>
                     <td> {row.age} </td>
