@@ -3,6 +3,8 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    border-radius: 0.4rem;
+    background-color: var(--brand-color-secondary-1);
 }
 
 .container tr {
@@ -11,7 +13,7 @@
     width: 100%;
 }
 .container tr:hover {
-    background-color: #dddddd;
+    background-color: var(--brand-color-secondary-2);
 }
 
 .container td {
@@ -19,56 +21,73 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    border: 1px solid #dddddd;
+    color: var(--neutral-color-5);
     text-align: left;
     padding: 8px;
 }
 
 .container thead {
+    padding: 2rem 2rem;
+    border-radius: 0.4rem;
+    background: var(--brand-color-secondary-0);
+}
+.container thead th {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem 2rem;
-    border: 1px solid black;
 }
 .container th {
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    background-color: #eee;
-    color: #333;
+    background-color: var(--brand-color-secondary-0);
+    color: var(--brand-color-primary-0);
 }
 
 .searchContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    height: 100%;
 }
-.searchInput {
+.searchContainer input{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    background-color: #eee;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem 0 0 0.25rem;
     color: #333;
 }
-.searchButton {
+.searchContainer button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    background-color: #eee;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0.25rem 0.25rem 0;
+    background-color: var(--brand-color-primary-0);
+    color: var(--neutral-color-0);
 }
-.searchButton:hover {
-    background-color: #ccc;
+.searchContainer input:focus {
+    outline: none;
+}
+.searchContainer button:hover {
     cursor: pointer;
+    background-color: var(--brand-color-primary-1);
+}
+
+.action {
+    display: flex;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
+    border-left: 0.1rem solid var(--brand-color-secondary-0);
+}
+.action:hover {
+    cursor: pointer;
+    background-color: var(--brand-color-secondary-0);
+    color: var(--feedback-color-danger-3);
 }

@@ -8,10 +8,21 @@ import styles from './index.module.css';
 const Home = () => {
     return (
         <div className={styles.gridContainer}>
-            <div className={styles.item1}> <Header /> </div>
-            <div className={styles.item2}> <Form /> </div>
-            <div className={styles.item3}> <Table /> </div>
-            <div className={styles.item4}> <Footer /> </div>
+            <div className={styles.item1}>
+                <Header />
+            </div>
+            
+            <div className={styles.item2}>
+                <Form />
+            </div>
+            
+            <div className={styles.item3}>
+                <Table /> 
+            </div>
+            
+            <div className={styles.item4}>
+                <Footer />
+            </div>
         </div>
     )
 }

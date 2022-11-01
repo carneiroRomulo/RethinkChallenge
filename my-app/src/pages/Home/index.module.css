@@ -8,7 +8,7 @@
         'form table table table table table'
         'footer footer footer footer footer footer';
     gap: 1rem;
-    border: 1px solid black;
+    padding: 2rem;
 }
 .item1 {
     grid-area: header;
@@ -16,11 +16,11 @@
 }
 .item2 {
     grid-area: form;
-    border: 2px solid blue;
 }
 .item3 {
     grid-area: table;
-    border: 2px solid green;
+    background: white;
+    border-radius: 0.4rem !important;
 }
 .item4 {
     grid-area: footer;

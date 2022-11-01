@@ -14,12 +14,12 @@ const Form = () => {
         <form className={styles.form} action="">
             <h3>Cadastro</h3>
             {objects.map((object) => (
-                <div className={styles.field}>
+                <div key={`field-${object.label}`} className={styles.field}>
                     <label>{object.label}</label>
                     <input type={object.type} />
                 </div>
             ))}
-            <button type='submit'>Confirm</button>
+            <button type='submit'>Confirmar</button>
         </form>
     );
 }
