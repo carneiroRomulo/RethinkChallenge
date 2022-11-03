@@ -44,3 +44,10 @@
     border-radius: 0.4rem;
     font-size: 1.2rem;
 }
+
+.error {
+    color: var(--feedback-color-danger-3);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}

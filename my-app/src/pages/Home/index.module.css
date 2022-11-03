@@ -4,25 +4,41 @@
 
     display: grid;
     grid-template-areas: 
-        'header header header header header header'
-        'form table table table table table'
-        'footer footer footer footer footer footer';
+        'form form table table table table'
+        'form form firstName firstName firstName averageAge'
+        'form form firstName firstName firstName toggleAdults';
     gap: 1rem;
     padding: 2rem;
 }
-.item1 {
-    grid-area: header;
-    border: 2px solid red;
+.averageAge { grid-area: averageAge; }
+.form { grid-area: form; }
+.table { grid-area: table; }
+.firstName { grid-area: firstName; }
+.toggleAdults { grid-area: toggleAdults; }
+
+.averageAge .title,
+.firstName h3 {
+    color: var(--brand-color-primary-0);
+    background-color: var(--brand-color-secondary-0);
+    padding: 0.5rem;
 }
-.item2 {
-    grid-area: form;
+
+.averageAge .value {
+    background-color: var(--brand-color-secondary-1);
+    color: var(--neutral-color-5);
+    padding: 0.5rem;
 }
-.item3 {
-    grid-area: table;
-    background: white;
-    border-radius: 0.4rem !important;
+.firstNameList {
+    background-color: var(--brand-color-secondary-1);
+    color: var(--neutral-color-5);
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 20rem;
+    overflow-y: scroll;
 }
-.item4 {
-    grid-area: footer;
-    border: 2px solid yellow;
+.firstNameList p {
+    padding: 1rem 0;
 }
