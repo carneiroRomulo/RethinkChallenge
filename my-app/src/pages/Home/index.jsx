@@ -27,6 +27,7 @@ const Home = () => {
     const [averageAge, setAverageAge] = useState(0)
 
     useEffect(() => {
+        // Show first name list and average age
         if (showOnlyAdults) {
             const adults = data.filter((person) => { return person.age >= 18 })
             setFirstNameList(adults.map((person) => { return person.name.split(' ')[0] }))
@@ -46,45 +47,48 @@ const Home = () => {
     }, [data, showOnlyAdults])
     
     return (
-        <div className={styles.gridContainer}>
-            <div className={styles.averageAge}>
-                <h3 className={styles.title}>Idade Média dos Cadastrados</h3>
-                <h3 className={styles.value}>{averageAge} anos</h3>
-            </div>
-            
-            <div className={styles.form}>
-                <Form
-                    data={data}
-                    setData={setData}
-                />
-            </div>
-            
-            <div className={styles.table}>
-                <Table
-                    showOnlyAdults={showOnlyAdults}
-                    data={data}
-                    setData={setData}
-                /> 
-            </div>
-            
-            <div className={styles.firstName}>
-                <h3>Primeiro Nome dos Cadastrados</h3>
-                <div className={styles.firstNameList}>
-                    {firstNameList.map((firstName, index) => (
-                        <p key={`firstName-${index}`}>{firstName}</p>
-                    ))}
+        <div className={styles.mainContainer}>
+            <div className={styles.container}>
+                <div className={styles.form}>
+                    <Form
+                        data={data}
+                        setData={setData}
+                    />
                 </div>
+                <div className={styles.table}>
+                    <Table
+                        showOnlyAdults={showOnlyAdults}
+                        data={data}
+                        setData={setData}
+                    /> 
+                </div> 
             </div>
 
-            <div className={styles.toggleAdults}>
-                <input
-                    type="checkbox"
-                    id="adults"
-                    name="adults"
-                    value="adults"
-                    onChange={() => setShowOnlyAdults(!showOnlyAdults)}
-                />
-                <label>Mostrar somente aptos a se habilitar</label>
+            <div className={styles.container}>
+                <div className={styles.averageAge}>
+                    <h3 className={styles.title}>Idade Média dos Cadastrados</h3>
+                    <h3 className={styles.value}>{averageAge} anos</h3>
+                </div>
+
+                <div className={styles.firstName}>
+                    <h3>Primeiro Nome dos Cadastrados</h3>
+                    <div className={styles.firstNameList}>
+                        {firstNameList.map((firstName, index) => (
+                            <p key={`firstName-${index}`}>{firstName}</p>
+                            ))}
+                    </div>
+                </div>
+
+                <div className={styles.toggleAdults}>
+                    <input
+                        type="checkbox"
+                        id="adults"
+                        name="adults"
+                        value="adults"
+                        onChange={() => setShowOnlyAdults(!showOnlyAdults)}
+                        />
+                    <label>Mostrar somente aptos a se habilitar</label>
+                </div>
             </div>
         </div>
     )

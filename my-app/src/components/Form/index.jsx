@@ -32,12 +32,12 @@ const Form = ({ data, setData }) => {
     }
 
     const objects = [
-        { label: 'Nome',                  type: 'text',    field: name,  setField: setName   },
-        { label: 'Idade',                 type: 'number',  field: age,   setField: setAge    },
-        { label: 'Profissão',             type: 'text',    field: job,   setField: setJob    },
-        { label: 'E-mail',                type: 'email',   field: email, setField: setEmail  },
-        { label: 'Telefone',              type: 'number',  field: phone, setField: setPhone  },
-        { label: 'Data de Preenchimento', type: 'date',    field: date,  setField: setDate   },
+        { label: 'Nome',                  type: 'text',   setField: setName   },
+        { label: 'Idade',                 type: 'number', setField: setAge    },
+        { label: 'Profissão',             type: 'text',   setField: setJob    },
+        { label: 'E-mail',                type: 'email',  setField: setEmail  },
+        { label: 'Telefone',              type: 'number', setField: setPhone  },
+        { label: 'Data de Preenchimento', type: 'date',   setField: setDate   },
     ]
     return (
         <form className={styles.form} action="">

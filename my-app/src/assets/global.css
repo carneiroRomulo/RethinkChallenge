@@ -61,7 +61,7 @@ body {
     height: 100vh;
     font-size: 1.6rem;
     font-family: var(--font-primary);
-    background: var(--neutral-color-6);
+    background: var(--neutral-color-4);
     color: var(--neutral-color-0);
 }
 

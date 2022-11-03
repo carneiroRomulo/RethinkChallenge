@@ -1,32 +1,41 @@
-.gridContainer {
-    height: 100vh;
-    width: 100vw;
-
-    display: grid;
-    grid-template-areas: 
-        'form form table table table table'
-        'form form firstName firstName firstName averageAge'
-        'form form firstName firstName firstName toggleAdults';
-    gap: 1rem;
-    padding: 2rem;
+.mainContainer {
+    display: flex;
+    flex-direction: column;
 }
-.averageAge { grid-area: averageAge; }
-.form { grid-area: form; }
-.table { grid-area: table; }
-.firstName { grid-area: firstName; }
-.toggleAdults { grid-area: toggleAdults; }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.form,
+.table,
+.firstName,
+.averageAge {
+    height: 100%;
+}
+.firstName {
+    width: 60%;
+}
 .averageAge .title,
 .firstName h3 {
     color: var(--brand-color-primary-0);
     background-color: var(--brand-color-secondary-0);
     padding: 0.5rem;
+    border-radius: 0.4rem 0.4rem 0 0;
 }
-
 .averageAge .value {
     background-color: var(--brand-color-secondary-1);
     color: var(--neutral-color-5);
     padding: 0.5rem;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 0 0 0.4rem 0.4rem;
 }
 .firstNameList {
     background-color: var(--brand-color-secondary-1);
@@ -36,7 +45,8 @@
     justify-content: space-between;
     align-items: center;
     font-size: 1.4rem;
-    height: 20rem;
+    border-radius: 0 0 0.4rem 0.4rem;
+    height: 14.8rem;
     overflow-y: scroll;
 }
 .firstNameList p {

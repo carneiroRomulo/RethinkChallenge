@@ -2,6 +2,7 @@ table {
     width: 112rem;
     background-color: var(--brand-color-secondary-2);
     border-collapse: collapse;
+    border-radius: 0.4rem;
 }
 
 tbody, thead tr { display: block; }
@@ -17,7 +18,8 @@ thead, .tableTitle {
 tbody {
     background-color: var(--brand-color-secondary-1);
     color: var(--neutral-color-5);
-    max-height: 25rem;
+    height: 32.8rem;
+    border-radius: 0 0 0.4rem 0.4rem;
     overflow: auto;
     font-size: 1.4rem;
 }
